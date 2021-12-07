@@ -1,0 +1,28 @@
+<form id="form" action="<%= action%>" method="POST">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <label>Nama</label>
+        <input type="text" name="name" class="form-control" placeholder="Nama" required value="<%= name%>" />
+      </div>
+    </div>
+
+    <% forms.forEach( (form, i) => { %>
+    <div class="col-md-12">
+      <div class="form-group">
+        <label><%= form.pl %></label>
+        <select class="form-control" name="<%= form.name %>" required>
+          <option disabled selected value>-- <%= form.pl %> --</option>
+          <% form.data.forEach( (data, i) => { const selected = data.select && "selected" %>
+          <option value="<%= data.value %>" <%=selected%> ><%= data.name %></option>
+          <% }) %>
+        </select>
+      </div>
+    </div>
+    <% }) %>
+
+    <div class="col-md-12">
+      <button type="submit" class="btn btn-primary col-md-12">Simpan Data</button>
+    </div>
+  </div>
+</form>

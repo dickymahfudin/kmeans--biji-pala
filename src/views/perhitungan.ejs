@@ -1,0 +1,40 @@
+<div class="card card-body">
+  <% rumus.result.forEach((kmean,index)=>{ %>
+  <h3>Pengulangan ke-<%=index+1%> adalah</h3>
+  <div class="row">
+    <h5 class="col-12">Jarak data dengan C1 adalah:</h5>
+    <%kmean.jarak1.forEach((jarak,i)=>{ %>
+    <div class="col-6">\[d(c_<%=index+1%>,x_<%=i+1%>)=\sqrt{_{<%=jarak.latex%>}} = <%=jarak.sqrt%>\]</div>
+    <% }); %>
+    <h5 class="col-12">Jarak data dengan C2 adalah</h5>
+    <%kmean.jarak2.forEach((jarak,i)=>{ %>
+    <div class="col-6">\[d(c_<%=index+1%>,x_<%=i+1%>)=\sqrt{_{<%=jarak.latex%>}} = <%=jarak.sqrt%>\]</div>
+    <% }); %>
+    <h5 class="col-12">Jarak data dengan C3 adalah</h5>
+    <%kmean.jarak3.forEach((jarak,i)=>{ %>
+    <div class="col-6">\[d(c_<%=index+1%>,x_<%=i+1%>)=\sqrt{_{<%=jarak.latex%>}} = <%=jarak.sqrt%>\]</div>
+    <% }); %>
+    <h5 class="col-12 mt-4">Pengelompokan data berdasarkan jarak minimum</h5>
+    <p class="col-12 mb-3">Untuk iterasi ke-<%=index+1%></p>
+    <p class="col-12 mb-3">Klaster 1= <%=kmean.pengulangan.klaster1%></p>
+    <p class="col-12 mb-3">Klaster 2= <%=kmean.pengulangan.klaster2%></p>
+    <p class="col-12 mb-3">Klaster 3= <%=kmean.pengulangan.klaster3%></p>
+    <h5 class="col-12 mb-3">Menghitung centroid baru</h5>
+    <% kmean.centroidBaru1.forEach((centroid,i)=>{ %>
+    <div class="col-6">\[v_<%=i+1%>={<%=centroid.latex%> \over <%=centroid.count%>} = <%=centroid.sum%>\]</div>
+    <% }); %>
+    <p class="col-12 mb-3">C1 Adalah <%=kmean.centroidNew1%></p>
+    <% kmean.centroidBaru2.forEach((centroid,i)=>{ %>
+    <div class="col-6">\[v_<%=i+1%>={<%=centroid.latex%> \over <%=centroid.count%>} = <%=centroid.sum%>\]</div>
+    <% }); %>
+    <p class="col-12 mb-3">C2 Adalah <%=kmean.centroidNew2%></p>
+    <% kmean.centroidBaru3.forEach((centroid,i)=>{ %>
+    <div class="col-6">\[v_<%=i+1%>={<%=centroid.latex%> \over <%=centroid.count%>} = <%=centroid.sum%>\]</div>
+    <% }); %>
+    <p class="col-12 mb-5">C3 Adalah <%=kmean.centroidNew3%></p>
+  </div>
+  <% }) %>
+</div>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
