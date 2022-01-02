@@ -55,8 +55,8 @@ module.exports = data => {
   const min = Math.floor(length / 3);
   const max = Math.ceil(length / 3);
   let c1 = arrayCentroid(data[0]);
-  let c2 = arrayCentroid(data[max]);
-  let c3 = arrayCentroid(data[min + max]);
+  let c2 = arrayCentroid(data[8]);
+  let c3 = arrayCentroid(data[5]);
   const result = [];
   let a = 0;
   let tempC1, tempC2, tempC3;

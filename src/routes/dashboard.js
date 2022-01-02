@@ -33,7 +33,10 @@ const forms = [
   {
     name: 'jamur',
     pl: 'Jamur',
-    data: [{ name: 'tidak', value: 1, select: false }],
+    data: [
+      { name: 'tidak', value: 1, select: false },
+      { name: 'ya', value: 2, select: false },
+    ],
   },
 ];
 
